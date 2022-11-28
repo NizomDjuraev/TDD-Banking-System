@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="BankTest" tests="6" skipped="0" failures="0" errors="0" timestamp="2022-11-28T08:30:51" hostname="DESKTOP-94V4V9I" time="0.003">
+  <properties/>
+  <testcase name="create_cd_account()" classname="BankTest" time="0.0"/>
+  <testcase name="create_several_cd_accounts()" classname="BankTest" time="0.0"/>
+  <testcase name="create_savings_account()" classname="BankTest" time="0.001"/>
+  <testcase name="create_several_checking_accounts()" classname="BankTest" time="0.0"/>
+  <testcase name="create_several_savings_accounts()" classname="BankTest" time="0.0"/>
+  <testcase name="create_checking_account()" classname="BankTest" time="0.0"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
