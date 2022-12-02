@@ -1,5 +1,5 @@
 public class CreateCommandValidator {
-    private Bank bank;// = new Bank();
+    private Bank bank;
 
     public CreateCommandValidator(Bank bank) {
         this.bank = bank;

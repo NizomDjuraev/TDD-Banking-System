@@ -1,22 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="BankTest" tests="16" skipped="0" failures="0" errors="0" timestamp="2022-12-02T11:02:20" hostname="DESKTOP-94V4V9I" time="0.014">
+<testsuite name="BankTest" tests="16" skipped="0" failures="0" errors="0" timestamp="2022-12-02T22:48:54" hostname="DESKTOP-94V4V9I" time="0.02">
   <properties/>
   <testcase name="deposit_into_checking_account()" classname="BankTest" time="0.001"/>
   <testcase name="create_cd_account()" classname="BankTest" time="0.001"/>
-  <testcase name="create_several_cd_accounts()" classname="BankTest" time="0.0"/>
-  <testcase name="create_savings_account()" classname="BankTest" time="0.001"/>
+  <testcase name="create_several_cd_accounts()" classname="BankTest" time="0.001"/>
+  <testcase name="create_savings_account()" classname="BankTest" time="0.002"/>
   <testcase name="several_deposits_into_savings_account()" classname="BankTest" time="0.001"/>
-  <testcase name="create_several_checking_accounts()" classname="BankTest" time="0.0"/>
+  <testcase name="create_several_checking_accounts()" classname="BankTest" time="0.001"/>
   <testcase name="create_several_savings_accounts()" classname="BankTest" time="0.0"/>
   <testcase name="bank_has_no_accounts_initially()" classname="BankTest" time="0.002"/>
-  <testcase name="withdraw_from_savings_account()" classname="BankTest" time="0.001"/>
-  <testcase name="several_withdrawals_from_savings_account()" classname="BankTest" time="0.0"/>
-  <testcase name="create_checking_account()" classname="BankTest" time="0.0"/>
-  <testcase name="several_deposits_into_checking_account()" classname="BankTest" time="0.001"/>
+  <testcase name="withdraw_from_savings_account()" classname="BankTest" time="0.0"/>
+  <testcase name="several_withdrawals_from_savings_account()" classname="BankTest" time="0.001"/>
+  <testcase name="create_checking_account()" classname="BankTest" time="0.001"/>
+  <testcase name="several_deposits_into_checking_account()" classname="BankTest" time="0.0"/>
   <testcase name="withdraw_from_checking_account()" classname="BankTest" time="0.0"/>
-  <testcase name="deposit_into_savings_account()" classname="BankTest" time="0.001"/>
+  <testcase name="deposit_into_savings_account()" classname="BankTest" time="0.0"/>
   <testcase name="several_withdrawals_from_checking_account()" classname="BankTest" time="0.0"/>
-  <testcase name="withdraw_from_checking_balance_cant_go__below_zero()" classname="BankTest" time="0.0"/>
+  <testcase name="withdraw_from_checking_balance_cant_go__below_zero()" classname="BankTest" time="0.001"/>
   <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>

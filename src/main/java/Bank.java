@@ -26,12 +26,12 @@ public class Bank {
     }
 
 
-    public void depositIntoAccount(int id, double balance) {
-        accounts.get(id).deposit(balance);
+    public void depositIntoAccount(int id, double amount) {
+        accounts.get(id).deposit(amount);
     }
 
-    public void withdrawFromAccount(int id, double balance) {
-        accounts.get(id).withdraw(balance);
+    public void withdrawFromAccount(int id, double amount) {
+        accounts.get(id).withdraw(amount);
     }
 
     public String getType(int id) {

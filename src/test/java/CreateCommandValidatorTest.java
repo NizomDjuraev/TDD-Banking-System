@@ -6,7 +6,7 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 
 public class CreateCommandValidatorTest {
 
-    CommandValidator commandValidator;
+    private CommandValidator commandValidator;
     private Bank bank;
     private boolean actual;
 
@@ -35,14 +35,20 @@ public class CreateCommandValidatorTest {
     }
 
     @Test
-    public void no_inputs_given_in_command() {
-        actual = commandValidator.validate(" ");
+    public void create_checking_id_too_short() {
+        actual = commandValidator.validate("create checking 1234567 0.1");
         assertFalse(actual);
     }
 
     @Test
-    public void create_id_too_short() {
-        actual = commandValidator.validate("create checking 1234567 0.1");
+    public void create_savings_id_too_short() {
+        actual = commandValidator.validate("create savings 1234567 0.1");
+        assertFalse(actual);
+    }
+
+    @Test
+    public void create_cd_id_too_short() {
+        actual = commandValidator.validate("create savings 1234567 0.1 500");
         assertFalse(actual);
     }
 

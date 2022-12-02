@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="CreateCommandProcessorTest" tests="3" skipped="0" failures="0" errors="0" timestamp="2022-12-02T22:48:54" hostname="DESKTOP-94V4V9I" time="0.006">
+  <properties/>
+  <testcase name="valid_create_cd_account_processed()" classname="CreateCommandProcessorTest" time="0.002"/>
+  <testcase name="valid_create_deposit_account_processed()" classname="CreateCommandProcessorTest" time="0.001"/>
+  <testcase name="valid_create_checking_account_processed()" classname="CreateCommandProcessorTest" time="0.001"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

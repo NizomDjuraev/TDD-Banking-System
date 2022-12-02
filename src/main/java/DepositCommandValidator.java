@@ -1,5 +1,5 @@
 public class DepositCommandValidator {
-    private Bank bank;// = new Bank();
+    private Bank bank;
 
     public DepositCommandValidator(Bank bank) {
         this.bank = bank;
