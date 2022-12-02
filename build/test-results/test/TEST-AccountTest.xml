@@ -1,24 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="AccountTest" tests="18" skipped="0" failures="0" errors="0" timestamp="2022-11-28T08:30:51" hostname="DESKTOP-94V4V9I" time="0.022">
+<testsuite name="AccountTest" tests="9" skipped="0" failures="0" errors="0" timestamp="2022-12-02T11:02:20" hostname="DESKTOP-94V4V9I" time="0.019">
   <properties/>
   <testcase name="does_the_savings_account_have_an_id()" classname="AccountTest" time="0.012"/>
-  <testcase name="does_the_checking_account_have_a_starting_balance()" classname="AccountTest" time="0.001"/>
-  <testcase name="deposit_into_checking_account()" classname="AccountTest" time="0.0"/>
-  <testcase name="does_the_savings_account_have_an_apr()" classname="AccountTest" time="0.001"/>
-  <testcase name="several_deposits_into_savings_account()" classname="AccountTest" time="0.0"/>
-  <testcase name="does_the_cd_account_have_an_id()" classname="AccountTest" time="0.0"/>
+  <testcase name="does_the_checking_account_have_a_starting_balance()" classname="AccountTest" time="0.002"/>
+  <testcase name="does_the_savings_account_have_an_apr()" classname="AccountTest" time="0.0"/>
+  <testcase name="does_the_cd_account_have_an_id()" classname="AccountTest" time="0.001"/>
   <testcase name="does_the_cd_account_have_a_starting_balance()" classname="AccountTest" time="0.0"/>
   <testcase name="does_the_checking_account_have_an_apr()" classname="AccountTest" time="0.0"/>
-  <testcase name="withdraw_from_savings_account()" classname="AccountTest" time="0.001"/>
-  <testcase name="several_withdrawals_from_savings_account()" classname="AccountTest" time="0.0"/>
   <testcase name="does_the_cd_account_have_an_apr()" classname="AccountTest" time="0.001"/>
-  <testcase name="several_deposits_into_checking_account()" classname="AccountTest" time="0.0"/>
-  <testcase name="withdraw_from_checking_account()" classname="AccountTest" time="0.001"/>
   <testcase name="does_the_checking_account_have_an_id()" classname="AccountTest" time="0.0"/>
-  <testcase name="deposit_into_savings_account()" classname="AccountTest" time="0.0"/>
-  <testcase name="several_withdrawals_from_checking_account()" classname="AccountTest" time="0.001"/>
   <testcase name="does_the_savings_account_have_a_starting_balance()" classname="AccountTest" time="0.001"/>
-  <testcase name="withdraw_from_checking_balance_cant_go__below_zero()" classname="AccountTest" time="0.0"/>
   <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>

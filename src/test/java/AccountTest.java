@@ -5,18 +5,22 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class AccountTest {
 
-    public static final Integer ID = 12345678;
-    public static final double APR = 0.2;
+    public static final String checkingTYPE = "checking";
+    public static final String savingsTYPE = "savings";
+    public static final String cdTYPE = "cd";
+    public static final int ID = 12345678;
+    public static final double APR = 0.1;
     public static final double BALANCE = 0.0;
+
     Account checking;
     Account savings;
     Account cd;
 
     @BeforeEach
     void setup() {
-        checking = new Account(ID, APR, BALANCE);
-        savings = new Account(ID, APR, BALANCE);
-        cd = new Account(ID, APR, BALANCE);
+        checking = new Account(checkingTYPE, ID, APR);
+        savings = new Account(savingsTYPE, ID, APR);
+        cd = new Account(cdTYPE, ID, APR);
     }
 
     @Test
@@ -67,66 +71,4 @@ public class AccountTest {
     }
 
 
-    @Test
-    void deposit_into_checking_account() {
-        checking.depositIntoAccount(500);
-        assertEquals(500, checking.getBalance());
-    }
-
-    @Test
-    void withdraw_from_checking_account() {
-        checking.depositIntoAccount(500);
-        checking.withdrawFromAccount(250);
-        assertEquals(250, checking.getBalance());
-    }
-
-    @Test
-    void several_deposits_into_checking_account() {
-        checking.depositIntoAccount(500);
-        checking.depositIntoAccount(500);
-        assertEquals(1000, checking.getBalance());
-    }
-
-    @Test
-    void several_withdrawals_from_checking_account() {
-        checking.depositIntoAccount(500);
-        checking.withdrawFromAccount(250);
-        checking.withdrawFromAccount(250);
-        assertEquals(0, checking.getBalance());
-    }
-
-
-    @Test
-    void deposit_into_savings_account() {
-        savings.depositIntoAccount(500);
-        assertEquals(500, savings.getBalance());
-    }
-
-    @Test
-    void withdraw_from_savings_account() {
-        savings.depositIntoAccount(500);
-        savings.withdrawFromAccount(250);
-        assertEquals(250, savings.getBalance());
-    }
-
-    @Test
-    void several_deposits_into_savings_account() {
-        savings.depositIntoAccount(500);
-        savings.depositIntoAccount(500);
-        assertEquals(1000, savings.getBalance());
-    }
-
-    @Test
-    void several_withdrawals_from_savings_account() {
-        savings.depositIntoAccount(500);
-        savings.withdrawFromAccount(250);
-        savings.withdrawFromAccount(250);
-        assertEquals(0, savings.getBalance());
-    }
-
-    @Test
-    void withdraw_from_checking_balance_cant_go__below_zero() {
-        checking.withdrawFromAccount(500);
-        assertEquals(0, checking.getBalance());
-    }
 }
