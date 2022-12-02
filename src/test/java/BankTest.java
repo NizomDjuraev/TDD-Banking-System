@@ -2,12 +2,14 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 public class BankTest {
 
-    public static final Integer ID = 12345678;
-    public static final double APR = 0.2;
-    public static final double BALANCE = 0.0;
+    public static final int ID = 12345678;
+    public static final double APR = 0.1;
+    public static final double AMOUNT = 1500;
+
     Bank bank;
 
     @BeforeEach
@@ -16,42 +18,118 @@ public class BankTest {
     }
 
     @Test
+    void bank_has_no_accounts_initially() {
+        assertTrue(bank.getAccounts().isEmpty());
+    }
+
+    @Test
     void create_checking_account() {
-        bank.createCheckingAccount(ID, APR, BALANCE);
+        bank.createCheckingAccount(ID, APR);
         assertEquals(ID, bank.getAccounts().get(ID).getId());
     }
 
     @Test
     void create_savings_account() {
-        bank.createSavingsAccount(ID, APR, BALANCE);
+        bank.createSavingsAccount(ID, APR);
         assertEquals(ID, bank.getAccounts().get(ID).getId());
     }
 
     @Test
     void create_cd_account() {
-        bank.createCdAccount(ID, APR, BALANCE);
+        bank.createCdAccount(ID, APR, AMOUNT);
         assertEquals(ID, bank.getAccounts().get(ID).getId());
     }
 
     @Test
     void create_several_checking_accounts() {
-        bank.createCheckingAccount(ID, APR, BALANCE);
-        bank.createCheckingAccount(ID + 1, APR, BALANCE);
+        bank.createCheckingAccount(ID, APR);
+        bank.createCheckingAccount(ID + 1, APR);
         assertEquals(ID + 1, bank.getAccounts().get(ID + 1).getId());
     }
 
     @Test
     void create_several_savings_accounts() {
-        bank.createSavingsAccount(ID, APR, BALANCE);
-        bank.createSavingsAccount(ID + 1, APR, BALANCE);
+        bank.createSavingsAccount(ID, APR);
+        bank.createSavingsAccount(ID + 1, APR);
         assertEquals(ID + 1, bank.getAccounts().get(ID + 1).getId());
     }
 
     @Test
     void create_several_cd_accounts() {
-        bank.createCdAccount(ID, APR, BALANCE);
-        bank.createCdAccount(ID + 1, APR, BALANCE);
+        bank.createCdAccount(ID, APR, AMOUNT);
+        bank.createCdAccount(ID + 1, APR, AMOUNT);
         assertEquals(ID + 1, bank.getAccounts().get(ID + 1).getId());
     }
 
+    @Test
+    void deposit_into_checking_account() {
+        bank.createCheckingAccount(ID, APR);
+        bank.depositIntoAccount(ID, 500);
+        assertEquals(500, bank.getAccounts().get(ID).getBalance());
+    }
+
+    @Test
+    void withdraw_from_checking_account() {
+        bank.createCheckingAccount(ID, APR);
+        bank.depositIntoAccount(ID, 500);
+        bank.withdrawFromAccount(ID, 250);
+        assertEquals(250, bank.getAccounts().get(ID).getBalance());
+    }
+
+    @Test
+    void several_deposits_into_checking_account() {
+        bank.createCheckingAccount(ID, APR);
+        bank.depositIntoAccount(ID, 500);
+        bank.depositIntoAccount(ID, 500);
+        assertEquals(1000, bank.getAccounts().get(ID).getBalance());
+    }
+
+    @Test
+    void several_withdrawals_from_checking_account() {
+        bank.createCheckingAccount(ID, APR);
+        bank.depositIntoAccount(ID, 500);
+        bank.withdrawFromAccount(ID, 250);
+        bank.withdrawFromAccount(ID, 250);
+        assertEquals(0, bank.getAccounts().get(ID).getBalance());
+    }
+
+
+    @Test
+    void deposit_into_savings_account() {
+        bank.createSavingsAccount(ID, APR);
+        bank.depositIntoAccount(ID, 500);
+        assertEquals(500, bank.getAccounts().get(ID).getBalance());
+    }
+
+    @Test
+    void withdraw_from_savings_account() {
+        bank.createSavingsAccount(ID, APR);
+        bank.depositIntoAccount(ID, 500);
+        bank.withdrawFromAccount(ID, 250);
+        assertEquals(250, bank.getAccounts().get(ID).getBalance());
+    }
+
+    @Test
+    void several_deposits_into_savings_account() {
+        bank.createSavingsAccount(ID, APR);
+        bank.depositIntoAccount(ID, 500);
+        bank.depositIntoAccount(ID, 500);
+        assertEquals(1000, bank.getAccounts().get(ID).getBalance());
+    }
+
+    @Test
+    void several_withdrawals_from_savings_account() {
+        bank.createSavingsAccount(ID, APR);
+        bank.depositIntoAccount(ID, 500);
+        bank.withdrawFromAccount(ID, 250);
+        bank.withdrawFromAccount(ID, 250);
+        assertEquals(0, bank.getAccounts().get(ID).getBalance());
+    }
+
+    @Test
+    void withdraw_from_checking_balance_cant_go__below_zero() {
+        bank.createCheckingAccount(ID, APR);
+        bank.withdrawFromAccount(ID, 500);
+        assertEquals(0, bank.getAccounts().get(ID).getBalance());
+    }
 }

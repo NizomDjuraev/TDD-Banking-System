@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="DepositCommandValidatorTest" tests="25" skipped="0" failures="0" errors="0" timestamp="2022-12-02T22:48:54" hostname="DESKTOP-94V4V9I" time="0.014">
+  <properties/>
+  <testcase name="bank_account_does_not_exist()" classname="DepositCommandValidatorTest" time="0.001"/>
+  <testcase name="valid_maximum_deposit_checking_account()" classname="DepositCommandValidatorTest" time="0.0"/>
+  <testcase name="deposit_command_has_non_integer_amount()" classname="DepositCommandValidatorTest" time="0.0"/>
+  <testcase name="cannot_deposit_negative_amount_into_account()" classname="DepositCommandValidatorTest" time="0.0"/>
+  <testcase name="deposit_command_has_non_integer_id()" classname="DepositCommandValidatorTest" time="0.0"/>
+  <testcase name="deposit_command_has_negative_id()" classname="DepositCommandValidatorTest" time="0.0"/>
+  <testcase name="account_id_too_short()" classname="DepositCommandValidatorTest" time="0.0"/>
+  <testcase name="command_valid_case_insensitivity()" classname="DepositCommandValidatorTest" time="0.001"/>
+  <testcase name="cannot_deposit_into_cd_account()" classname="DepositCommandValidatorTest" time="0.0"/>
+  <testcase name="deposit_command_missing_id()" classname="DepositCommandValidatorTest" time="0.0"/>
+  <testcase name="deposit_command_misspelled()" classname="DepositCommandValidatorTest" time="0.0"/>
+  <testcase name="invalid_command_too_many_inputs_given()" classname="DepositCommandValidatorTest" time="0.001"/>
+  <testcase name="valid_deposit_checking_command()" classname="DepositCommandValidatorTest" time="0.0"/>
+  <testcase name="valid_maximum_deposit_savings_account()" classname="DepositCommandValidatorTest" time="0.0"/>
+  <testcase name="checking_account_does_exist()" classname="DepositCommandValidatorTest" time="0.0"/>
+  <testcase name="inputs_are_in_wrong_order()" classname="DepositCommandValidatorTest" time="0.0"/>
+  <testcase name="valid_upper_boundary_deposit_checking_account()" classname="DepositCommandValidatorTest" time="0.0"/>
+  <testcase name="invalid_command_no_inputs_given()" classname="DepositCommandValidatorTest" time="0.0"/>
+  <testcase name="valid_minimum_deposit_checking_account()" classname="DepositCommandValidatorTest" time="0.001"/>
+  <testcase name="savings_account_does_exist()" classname="DepositCommandValidatorTest" time="0.0"/>
+  <testcase name="valid_lower_boundary_deposit_checking_account()" classname="DepositCommandValidatorTest" time="0.0"/>
+  <testcase name="account_id_too_long()" classname="DepositCommandValidatorTest" time="0.0"/>
+  <testcase name="valid_deposit_savings_command()" classname="DepositCommandValidatorTest" time="0.0"/>
+  <testcase name="deposit_input_missing_from_command()" classname="DepositCommandValidatorTest" time="0.0"/>
+  <testcase name="valid_minimum_deposit_savings_account()" classname="DepositCommandValidatorTest" time="0.0"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

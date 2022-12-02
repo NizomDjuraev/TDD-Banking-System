@@ -1,16 +1,22 @@
 public class Account {
 
-    private Integer id;
+    private int id;
     private double apr;
-    private double balance;
+    double balance;
+    String type;
 
-    public Account(Integer id, double apr, double balance) {
+    public Account(String type, int id, double apr) {
+        this.type = type;
         this.id = id;
         this.apr = apr;
-        this.balance = balance;
+        this.balance = 0;
     }
 
-    public Integer getId() {
+    public String getType() {
+        return type;
+    }
+
+    public int getId() {
         return id;
     }
 
@@ -22,15 +28,15 @@ public class Account {
         return balance;
     }
 
-    public void depositIntoAccount(double amount) {
-        this.balance = this.balance + amount;
+    public void deposit(double amount) {
+        this.balance += amount;
     }
 
-    public void withdrawFromAccount(double amount) {
+    public void withdraw(double amount) {
         if (amount > this.balance) {
             balance = 0;
         } else {
-            this.balance = this.balance - amount;
+            this.balance -= amount;
         }
     }
 }
