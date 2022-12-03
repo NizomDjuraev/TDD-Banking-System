@@ -134,4 +134,35 @@ public class BankTest {
         bank.withdrawFromAccount(ID, 500);
         assertEquals(0, bank.getAccounts().get(ID).getBalance());
     }
+
+    @Test
+    void withdraw_zero_amount_from_checking_account_with_zero_balance() {
+        bank.createCheckingAccount(ID, APR);
+        bank.withdrawFromAccount(ID, 0);
+        assertEquals(0, bank.getAccounts().get(ID).getBalance());
+    }
+
+    @Test
+    void withdraw_zero_amount_from_checking_account_with_nonzero_balance() {
+        bank.createCheckingAccount(ID, APR);
+        bank.depositIntoAccount(ID, 500);
+        bank.withdrawFromAccount(ID, 0);
+        assertEquals(500, bank.getAccounts().get(ID).getBalance());
+    }
+
+    @Test
+    void withdraw_zero_amount_from_savings_account_with_zero_balance() {
+        bank.createCheckingAccount(ID, APR);
+        bank.withdrawFromAccount(ID, 0);
+        assertEquals(0, bank.getAccounts().get(ID).getBalance());
+    }
+
+    @Test
+    void withdraw_zero_amount_from_savings_account_with_nonzero_balance() {
+        bank.createSavingsAccount(ID, APR);
+        bank.depositIntoAccount(ID, 500);
+        bank.withdrawFromAccount(ID, 0);
+        assertEquals(500, bank.getAccounts().get(ID).getBalance());
+    }
+    
 }

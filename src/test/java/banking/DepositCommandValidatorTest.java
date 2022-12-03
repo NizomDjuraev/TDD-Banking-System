@@ -110,6 +110,12 @@ public class DepositCommandValidatorTest {
         assertFalse(actual);
     }
 
+    @Test
+    public void invalid_deposit_amount_is_noninteger_and_negative() {
+        bank.createCheckingAccount(12345678, 0.1);
+        actual = commandValidator.validate("deposit 12345678 -50@.");
+    }
+
 
     @Test
     public void checking_account_does_exist() {
@@ -187,4 +193,47 @@ public class DepositCommandValidatorTest {
         actual = commandValidator.validate("deposit 12345678 1");
         assertTrue(actual);
     }
+
+    @Test
+    public void valid_upper_boundary_deposit_savings_account() {
+        bank.createSavingsAccount(12345678, 0.1);
+        actual = commandValidator.validate("deposit 12345678 2499");
+        assertTrue(actual);
+    }
+
+    @Test
+    public void valid_lower_boundary_deposit_savings_account() {
+        bank.createSavingsAccount(12345678, 0.1);
+        actual = commandValidator.validate("deposit 12345678 1");
+        assertTrue(actual);
+    }
+
+    @Test
+    public void invalid_upper_boundary_deposit_checking_account() {
+        bank.createCheckingAccount(12345678, 0.1);
+        actual = commandValidator.validate("deposit 12345678 1001");
+        assertFalse(actual);
+    }
+
+    @Test
+    public void invalid_lower_boundary_deposit_checking_account() {
+        bank.createCheckingAccount(12345678, 0.1);
+        actual = commandValidator.validate("deposit 12345678 -1");
+        assertFalse(actual);
+    }
+
+    @Test
+    public void invalid_upper_boundary_deposit_savings_account() {
+        bank.createSavingsAccount(12345678, 0.1);
+        actual = commandValidator.validate("deposit 12345678 2501");
+        assertFalse(actual);
+    }
+
+    @Test
+    public void invalid_lower_boundary_deposit_savings_account() {
+        bank.createSavingsAccount(12345678, 0.1);
+        actual = commandValidator.validate("deposit 12345678 -1");
+        assertFalse(actual);
+    }
+
 }

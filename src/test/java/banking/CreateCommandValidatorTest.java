@@ -67,6 +67,12 @@ public class CreateCommandValidatorTest {
     }
 
     @Test
+    public void create_id_is_positive() {
+        actual = commandValidator.validate("create checking 12345678 0.1");
+        assertTrue(actual);
+    }
+
+    @Test
     public void create_id_has_no_id_input() {
         actual = commandValidator.validate("create checking 0.1");
         assertFalse(actual);
@@ -259,6 +265,30 @@ public class CreateCommandValidatorTest {
     public void command_valid_case_insensitivity() {
         actual = commandValidator.validate("create chECKing 12345678 0.1");
         assertTrue(actual);
+    }
+
+    @Test
+    public void apr_below_min_boundary() {
+        actual = commandValidator.validate("create checking 12345678 -0.1");
+        assertFalse(actual);
+    }
+
+    @Test
+    public void apr_above_min_boundary() {
+        actual = commandValidator.validate("create checking 12345678 0.1");
+        assertTrue(actual);
+    }
+
+    @Test
+    public void apr_below_max_boundary() {
+        actual = commandValidator.validate("create checking 12345678 9.9");
+        assertTrue(actual);
+    }
+
+    @Test
+    public void apr_above_max_boundary() {
+        actual = commandValidator.validate("create checking 12345678 10.1");
+        assertFalse(actual);
     }
 
 
