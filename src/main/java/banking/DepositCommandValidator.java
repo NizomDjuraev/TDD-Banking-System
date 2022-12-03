@@ -1,7 +1,7 @@
 package banking;
 
 public class DepositCommandValidator {
-    private Bank bank;
+    Bank bank;
 
     public DepositCommandValidator(Bank bank) {
         this.bank = bank;
@@ -13,9 +13,7 @@ public class DepositCommandValidator {
             if (depositCheckingValidation(commandString)) {
                 return true;
             }
-            if (depositSavingsValidation(commandString)) {
-                return true;
-            }
+            return depositSavingsValidation(commandString);
         }
         return false;
     }
@@ -23,26 +21,17 @@ public class DepositCommandValidator {
 
     private boolean doesBankExistAlready(String commandId) {
 
-        if (bank.doesIdExist(Integer.parseInt(commandId))) {
-            return true;
-        }
-        return false;
+        return bank.doesIdExist(Integer.parseInt(commandId));
     }
 
     private boolean depositCheckingValidation(String commandString) {
         String[] command = commandString.split(" ");
-        if (isTypeChecking(command[1]) && validCheckingAmount(command[2])) {
-            return true;
-        }
-        return false;
+        return isTypeChecking(command[1]) && validCheckingAmount(command[2]);
     }
 
     private boolean depositSavingsValidation(String commandString) {
         String[] command = commandString.split(" ");
-        if (isTypeSavings(command[1]) && validSavingsAmount(command[2])) {
-            return true;
-        }
-        return false;
+        return isTypeSavings(command[1]) && validSavingsAmount(command[2]);
     }
 
 
@@ -59,43 +48,35 @@ public class DepositCommandValidator {
     }
 
     private boolean validAccountId(String commandId) {
-        if (commandId.length() == 8
+        return commandId.length() == 8
                 && isInteger(commandId)
                 && doesBankExistAlready(commandId)
                 && !isTypeCd(commandId)
-                && (commandId.matches("[0-9]+"))
-                && isIntPositive(commandId)) {
-            return true;
-        }
-        return false;
+                && (containsNoSpecialCharacters(commandId))
+                && isIntPositive(commandId);
     }
 
     private boolean validAmount(String commandAmount) {
-        if (isInteger(commandAmount)
-                && (commandAmount.matches("[0-9]+"))
-                && isIntPositive(commandAmount)) {
-            return true;
-        }
-        return false;
+        return isInteger(commandAmount)
+                && isIntPositive(commandAmount)
+                && (containsNoSpecialCharacters(commandAmount));
     }
 
     private boolean validCheckingAmount(String checkingAmount) {
-        if (isInteger(checkingAmount) && Integer.parseInt(checkingAmount) >= 0 && Integer.parseInt(checkingAmount) <= 1000) {
-            return true;
-        }
-        return false;
+        return isInteger(checkingAmount) && Integer.parseInt(checkingAmount) >= 0 && Integer.parseInt(checkingAmount) <= 1000;
     }
 
     private boolean validSavingsAmount(String savingsAmount) {
-        if (isInteger(savingsAmount) && Integer.parseInt(savingsAmount) >= 0 && Integer.parseInt(savingsAmount) <= 2500) {
-            return true;
-        }
-        return false;
+        return isInteger(savingsAmount) && Integer.parseInt(savingsAmount) >= 0 && Integer.parseInt(savingsAmount) <= 2500;
     }
 
-    private boolean isInteger(String value) {
+    private boolean containsNoSpecialCharacters(String commandId) {
+        return commandId.matches("[0-9]+");
+    }
+
+    private boolean isInteger(String commandId) {
         try {
-            Integer.parseInt(value);
+            Integer.parseInt(commandId);
         } catch (Exception notInt) {
             return false;
         }

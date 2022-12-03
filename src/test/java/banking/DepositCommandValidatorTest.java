@@ -114,18 +114,19 @@ public class DepositCommandValidatorTest {
     public void invalid_deposit_amount_is_noninteger_and_negative() {
         bank.createCheckingAccount(12345678, 0.1);
         actual = commandValidator.validate("deposit 12345678 -50@.");
+        assertFalse(actual);
     }
 
 
     @Test
-    public void checking_account_does_exist() {
+    public void checking_account_does_exist_for_depositing() {
         bank.createCheckingAccount(12345678, 0.1);
         actual = commandValidator.validate("deposit 12345678 500");
         assertTrue(actual);
     }
 
     @Test
-    public void savings_account_does_exist() {
+    public void savings_account_does_exist_for_depositing() {
         bank.createSavingsAccount(12345678, 0.1);
         actual = commandValidator.validate("deposit 12345678 500");
         assertTrue(actual);

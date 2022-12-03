@@ -11,6 +11,7 @@ public class CommandValidator {
     public boolean validate(String command) {
         CreateCommandValidator createCommandValidator = new CreateCommandValidator(bank);
         DepositCommandValidator depositCommandValidator = new DepositCommandValidator(bank);
+        WithdrawCommandValidator withdrawCommandValidator = new WithdrawCommandValidator(bank);
 
         String[] inputCommand = command.split(" ");
         if (inputCommand.length == 0) {
@@ -20,6 +21,12 @@ public class CommandValidator {
             return createCommandValidator.validateCreateCommand(command);
         } else if (inputCommand[0].equalsIgnoreCase("deposit")) {
             return depositCommandValidator.validateDepositCommand(command);
+        } else if (inputCommand[0].equalsIgnoreCase("withdraw")) {
+            return withdrawCommandValidator.validateWithdrawCommand(command);
+        } else if (inputCommand[0].equalsIgnoreCase("transfer")) {
+            return false;//depositCommandValidator.validateDepositCommand(command);
+        } else if (inputCommand[0].equalsIgnoreCase("pass")) {
+            return false;//depositCommandValidator.validateDepositCommand(command);
         }
         return false;
     }
