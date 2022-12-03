@@ -11,6 +11,8 @@ public class CommandProcessor {
     public void process(String command) {
         CreateCommandProcessor createCommandProcessor = new CreateCommandProcessor(bank);
         DepositCommandProcessor depositCommandProcessor = new DepositCommandProcessor(bank);
+        WithdrawCommandProcessor withdrawCommandProcessor = new WithdrawCommandProcessor(bank);
+        TransferCommandProcessor transferCommandProcessor = new TransferCommandProcessor(bank);
 
         String[] inputCommand = command.split(" ");
         if (inputCommand[0].equalsIgnoreCase("create")) {
@@ -18,6 +20,12 @@ public class CommandProcessor {
         }
         if (inputCommand[0].equalsIgnoreCase("deposit")) {
             depositCommandProcessor.processDepositCommand(command);
+        }
+        if (inputCommand[0].equalsIgnoreCase("withdraw")) {
+            withdrawCommandProcessor.processWithdrawCommand(command);
+        }
+        if (inputCommand[0].equalsIgnoreCase("transfer")) {
+            transferCommandProcessor.transferCommandProcessor(command);
         }
     }
 

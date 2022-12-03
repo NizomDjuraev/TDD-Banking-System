@@ -1,41 +1,44 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="banking.WithdrawCommandValidatorTest" tests="36" skipped="0" failures="0" errors="0" timestamp="2022-12-03T05:09:56" hostname="DESKTOP-94V4V9I" time="0.018">
+<testsuite name="banking.WithdrawCommandValidatorTest" tests="39" skipped="0" failures="0" errors="0" timestamp="2022-12-03T09:27:23" hostname="DESKTOP-94V4V9I" time="0.02">
   <properties/>
   <testcase name="valid_cd_account_withdraw_command()" classname="banking.WithdrawCommandValidatorTest" time="0.001"/>
   <testcase name="cannot_withdraw_negative_amount_into_checking_account()" classname="banking.WithdrawCommandValidatorTest" time="0.0"/>
-  <testcase name="invalid_withdraw_command_misspelled()" classname="banking.WithdrawCommandValidatorTest" time="0.001"/>
+  <testcase name="invalid_withdraw_command_misspelled()" classname="banking.WithdrawCommandValidatorTest" time="0.0"/>
   <testcase name="invalid_withdraw_command_amount_is_noninteger_and_negative()" classname="banking.WithdrawCommandValidatorTest" time="0.0"/>
   <testcase name="invalid_withdraw_command_account_id_too_long()" classname="banking.WithdrawCommandValidatorTest" time="0.0"/>
   <testcase name="valid_checking_account_withdraw_command()" classname="banking.WithdrawCommandValidatorTest" time="0.0"/>
   <testcase name="cannot_withdraw_bank_account_does_not_exist()" classname="banking.WithdrawCommandValidatorTest" time="0.0"/>
   <testcase name="invalid_withdraw_command_has_no_inputs()" classname="banking.WithdrawCommandValidatorTest" time="0.0"/>
-  <testcase name="invalid_upper_boundary_withdraw_savings_account()" classname="banking.WithdrawCommandValidatorTest" time="0.0"/>
+  <testcase name="invalid_upper_boundary_withdraw_savings_account()" classname="banking.WithdrawCommandValidatorTest" time="0.001"/>
   <testcase name="valid_withdraw_savings_command()" classname="banking.WithdrawCommandValidatorTest" time="0.0"/>
-  <testcase name="cannot_withdraw_from_cd_account_with_amount_less_than_account_balance()" classname="banking.WithdrawCommandValidatorTest" time="0.0"/>
+  <testcase name="cannot_withdraw_from_cd_account_with_amount_less_than_account_balance()" classname="banking.WithdrawCommandValidatorTest" time="0.001"/>
   <testcase name="withdraw_command_missing_id()" classname="banking.WithdrawCommandValidatorTest" time="0.0"/>
   <testcase name="withdraw_command_valid_case_insensitivity()" classname="banking.WithdrawCommandValidatorTest" time="0.001"/>
   <testcase name="invalid_lower_boundary_withdraw_savings_account()" classname="banking.WithdrawCommandValidatorTest" time="0.0"/>
   <testcase name="withdraw_command_has_negative_id()" classname="banking.WithdrawCommandValidatorTest" time="0.001"/>
   <testcase name="valid_maximum_withdraw_checking_account()" classname="banking.WithdrawCommandValidatorTest" time="0.001"/>
   <testcase name="invalid_command_too_many_inputs_given()" classname="banking.WithdrawCommandValidatorTest" time="0.0"/>
-  <testcase name="valid_lower_boundary_withdraw_checking_account()" classname="banking.WithdrawCommandValidatorTest" time="0.001"/>
-  <testcase name="valid_upper_boundary_withdraw_savings_account()" classname="banking.WithdrawCommandValidatorTest" time="0.0"/>
+  <testcase name="valid_lower_boundary_withdraw_checking_account()" classname="banking.WithdrawCommandValidatorTest" time="0.0"/>
+  <testcase name="valid_upper_boundary_withdraw_savings_account()" classname="banking.WithdrawCommandValidatorTest" time="0.001"/>
   <testcase name="valid_minimum_withdraw_savings_account()" classname="banking.WithdrawCommandValidatorTest" time="0.0"/>
   <testcase name="cannot_withdraw_negative_amount_into_savings_account()" classname="banking.WithdrawCommandValidatorTest" time="0.001"/>
   <testcase name="inputs_are_in_wrong_order()" classname="banking.WithdrawCommandValidatorTest" time="0.0"/>
-  <testcase name="invalid_checking_account_withdraw_account_does_not_exist()" classname="banking.WithdrawCommandValidatorTest" time="0.0"/>
+  <testcase name="invalid_checking_account_withdraw_account_does_not_exist()" classname="banking.WithdrawCommandValidatorTest" time="0.001"/>
   <testcase name="valid_lower_boundary_withdraw_savings_account()" classname="banking.WithdrawCommandValidatorTest" time="0.0"/>
-  <testcase name="withdraw_input_missing_from_command()" classname="banking.WithdrawCommandValidatorTest" time="0.001"/>
+  <testcase name="valid_withdraw_from_savings_account_with_decimal_amount()" classname="banking.WithdrawCommandValidatorTest" time="0.001"/>
+  <testcase name="withdraw_input_missing_from_command()" classname="banking.WithdrawCommandValidatorTest" time="0.0"/>
   <testcase name="invalid_command_no_inputs_given()" classname="banking.WithdrawCommandValidatorTest" time="0.0"/>
-  <testcase name="invalid_lower_boundary_withdraw_checking_account()" classname="banking.WithdrawCommandValidatorTest" time="0.001"/>
-  <testcase name="valid_upper_boundary_withdraw_checking_account()" classname="banking.WithdrawCommandValidatorTest" time="0.0"/>
-  <testcase name="invalid_withdraw_command_account_id_too_short()" classname="banking.WithdrawCommandValidatorTest" time="0.001"/>
-  <testcase name="valid_savings_account_withdraw_command()" classname="banking.WithdrawCommandValidatorTest" time="0.0"/>
+  <testcase name="invalid_lower_boundary_withdraw_checking_account()" classname="banking.WithdrawCommandValidatorTest" time="0.0"/>
+  <testcase name="valid_upper_boundary_withdraw_checking_account()" classname="banking.WithdrawCommandValidatorTest" time="0.001"/>
+  <testcase name="invalid_withdraw_command_account_id_too_short()" classname="banking.WithdrawCommandValidatorTest" time="0.0"/>
+  <testcase name="valid_savings_account_withdraw_command()" classname="banking.WithdrawCommandValidatorTest" time="0.001"/>
   <testcase name="valid_withdraw_checking_command()" classname="banking.WithdrawCommandValidatorTest" time="0.0"/>
-  <testcase name="withdraw_command_has_non_integer_id()" classname="banking.WithdrawCommandValidatorTest" time="0.001"/>
+  <testcase name="valid_withdraw_from_checking_account_with_decimal_amount()" classname="banking.WithdrawCommandValidatorTest" time="0.0"/>
+  <testcase name="valid_withdraw_from_cd_account_with_decimal_amount()" classname="banking.WithdrawCommandValidatorTest" time="0.0"/>
+  <testcase name="withdraw_command_has_non_integer_id()" classname="banking.WithdrawCommandValidatorTest" time="0.0"/>
   <testcase name="invalid_upper_boundary_withdraw_checking_account()" classname="banking.WithdrawCommandValidatorTest" time="0.0"/>
   <testcase name="valid_maximum_withdraw_savings_account()" classname="banking.WithdrawCommandValidatorTest" time="0.0"/>
-  <testcase name="invalid_withdraw_command_has_non_integer_amount()" classname="banking.WithdrawCommandValidatorTest" time="0.0"/>
+  <testcase name="invalid_withdraw_command_has_non_integer_amount()" classname="banking.WithdrawCommandValidatorTest" time="0.001"/>
   <testcase name="valid_minimum_withdraw_checking_account()" classname="banking.WithdrawCommandValidatorTest" time="0.0"/>
   <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[]]></system-err>

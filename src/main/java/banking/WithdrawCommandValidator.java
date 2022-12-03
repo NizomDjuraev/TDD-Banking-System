@@ -47,9 +47,7 @@ public class WithdrawCommandValidator {
     }
 
     private boolean validAmount(String commandAmount) {
-        return isInteger(commandAmount)
-                && isIntPositive(commandAmount)
-                && (containsNoSpecialCharacters(commandAmount));
+        return isDouble(commandAmount) && isDoublePositive(commandAmount);
     }
 
     private boolean isInteger(String commandId) {
@@ -59,6 +57,19 @@ public class WithdrawCommandValidator {
             return false;
         }
         return true;
+    }
+
+    private boolean isDouble(String commandId) {
+        try {
+            Double.parseDouble(commandId);
+        } catch (Exception notDouble) {
+            return false;
+        }
+        return true;
+    }
+
+    private boolean isDoublePositive(String inputAmount) {
+        return (Double.parseDouble(inputAmount) >= 0);
     }
 
     private boolean containsNoSpecialCharacters(String commandId) {
@@ -86,15 +97,15 @@ public class WithdrawCommandValidator {
     }
 
     private boolean validCheckingAmount(String checkingAmount) {
-        return isInteger(checkingAmount) && Integer.parseInt(checkingAmount) >= 0 && Integer.parseInt(checkingAmount) <= 400;
+        return isDouble(checkingAmount) && Double.parseDouble(checkingAmount) >= 0 && Double.parseDouble(checkingAmount) <= 400;
     }
 
     private boolean validSavingsAmount(String savingsAmount) {
-        return isInteger(savingsAmount) && Integer.parseInt(savingsAmount) >= 0 && Integer.parseInt(savingsAmount) <= 1000;
+        return isDouble(savingsAmount) && Double.parseDouble(savingsAmount) >= 0 && Double.parseDouble(savingsAmount) <= 1000;
     }
 
     private boolean validCdAmount(String cdId, String cdAmount) {
-        return isInteger(cdAmount) && Integer.parseInt(cdAmount) == bank.getAccounts().get(Integer.parseInt(cdId)).getBalance();
+        return isDouble(cdAmount) && Double.parseDouble(cdAmount) == bank.getAccounts().get(Integer.parseInt(cdId)).getBalance();
     }
 
 }

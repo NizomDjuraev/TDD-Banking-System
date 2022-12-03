@@ -37,6 +37,12 @@ public class CreateCommandValidatorTest {
     }
 
     @Test
+    public void valid_create_cd_account_with_decimal_amount() {
+        actual = commandValidator.validate("create cd 12345678 0.1 1500.05");
+        assertTrue(actual);
+    }
+
+    @Test
     public void create_checking_id_too_short() {
         actual = commandValidator.validate("create checking 1234567 0.1");
         assertFalse(actual);

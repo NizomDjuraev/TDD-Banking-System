@@ -63,6 +63,27 @@ public class WithdrawCommandValidatorTest {
     }
 
     @Test
+    public void valid_withdraw_from_checking_account_with_decimal_amount() {
+        bank.createCheckingAccount(12345678, 0.1);
+        actual = commandValidator.validate("withdraw 12345678 300.05");
+        assertTrue(actual);
+    }
+
+    @Test
+    public void valid_withdraw_from_savings_account_with_decimal_amount() {
+        bank.createSavingsAccount(12345678, 0.1);
+        actual = commandValidator.validate("withdraw 12345678 300.05");
+        assertTrue(actual);
+    }
+
+    @Test
+    public void valid_withdraw_from_cd_account_with_decimal_amount() {
+        bank.createSavingsAccount(12345678, 0.1);
+        actual = commandValidator.validate("withdraw 12345678 300.05");
+        assertTrue(actual);
+    }
+
+    @Test
     public void valid_maximum_withdraw_checking_account() {
         bank.createCheckingAccount(12345678, 0.1);
         actual = commandValidator.validate("withdraw 12345678 400");

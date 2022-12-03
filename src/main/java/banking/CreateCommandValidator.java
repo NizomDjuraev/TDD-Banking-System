@@ -72,7 +72,7 @@ public class CreateCommandValidator {
 
 
     private boolean isAprBetweenMaxMin(String commandApr) {
-        return (Double.parseDouble(commandApr) > 0 && Double.parseDouble(commandApr) < 10.000000001);
+        return (Double.parseDouble(commandApr) >= 0 && Double.parseDouble(commandApr) <= 10);
     }
 
     private boolean validAccountId(String commandId) {
@@ -93,7 +93,7 @@ public class CreateCommandValidator {
     }
 
     private boolean validCdAmount(String cdAmount) {
-        return isInteger(cdAmount) && Integer.parseInt(cdAmount) >= 1000 && Integer.parseInt(cdAmount) <= 10000;
+        return isDouble(cdAmount) && Double.parseDouble(cdAmount) >= 1000 && Double.parseDouble(cdAmount) <= 10000;
     }
 
     private boolean containsNoSpecialCharacters(String commandId) {
@@ -109,9 +109,10 @@ public class CreateCommandValidator {
         return true;
     }
 
-    private boolean isDouble(String commandString) {
+
+    private boolean isDouble(String value) {
         try {
-            Double.parseDouble(commandString);
+            Double.parseDouble(value);
         } catch (Exception notFloat) {
             return false;
         }

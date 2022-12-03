@@ -154,6 +154,20 @@ public class DepositCommandValidatorTest {
     }
 
     @Test
+    public void valid_deposit_into_checking_account_command_with_decimal_amount() {
+        bank.createCheckingAccount(12345678, 0.1);
+        actual = commandValidator.validate("deposit 12345678 50.5");
+        assertTrue(actual);
+    }
+
+    @Test
+    public void valid_deposit_into_savings_account_command_with_decimal_amount() {
+        bank.createSavingsAccount(12345678, 0.1);
+        actual = commandValidator.validate("deposit 12345678 50.5");
+        assertTrue(actual);
+    }
+
+    @Test
     public void valid_maximum_deposit_checking_account() {
         bank.createCheckingAccount(12345678, 0.1);
         actual = commandValidator.validate("deposit 12345678 1000");

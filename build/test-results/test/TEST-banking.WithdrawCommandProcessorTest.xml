@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="banking.WithdrawCommandProcessorTest" tests="5" skipped="0" failures="0" errors="0" timestamp="2022-12-03T09:27:23" hostname="DESKTOP-94V4V9I" time="0.003">
+  <properties/>
+  <testcase name="valid_withdraw_command_from_savings_account_with_zero_balance_processed()" classname="banking.WithdrawCommandProcessorTest" time="0.0"/>
+  <testcase name="valid_withdraw_command_from_cd_account_with_existing_balance_processed()" classname="banking.WithdrawCommandProcessorTest" time="0.0"/>
+  <testcase name="valid_withdraw_command_from_savings_account_with_existing_balance_processed()" classname="banking.WithdrawCommandProcessorTest" time="0.001"/>
+  <testcase name="valid_withdraw_command_from_checking_account_with_zero_balance_processed()" classname="banking.WithdrawCommandProcessorTest" time="0.0"/>
+  <testcase name="valid_withdraw_command_from_checking_account_with_existing_balance_processed()" classname="banking.WithdrawCommandProcessorTest" time="0.001"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

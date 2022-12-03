@@ -20,7 +20,6 @@ public class DepositCommandValidator {
 
 
     private boolean doesBankExistAlready(String commandId) {
-
         return bank.doesIdExist(Integer.parseInt(commandId));
     }
 
@@ -57,30 +56,41 @@ public class DepositCommandValidator {
     }
 
     private boolean validAmount(String commandAmount) {
-        return isInteger(commandAmount)
-                && isIntPositive(commandAmount)
-                && (containsNoSpecialCharacters(commandAmount));
+        return isDouble(commandAmount) && isDoublePositive(commandAmount);
     }
 
     private boolean validCheckingAmount(String checkingAmount) {
-        return isInteger(checkingAmount) && Integer.parseInt(checkingAmount) >= 0 && Integer.parseInt(checkingAmount) <= 1000;
+        return isDouble(checkingAmount) && Double.parseDouble(checkingAmount) >= 0 && Double.parseDouble(checkingAmount) <= 1000;
     }
 
     private boolean validSavingsAmount(String savingsAmount) {
-        return isInteger(savingsAmount) && Integer.parseInt(savingsAmount) >= 0 && Integer.parseInt(savingsAmount) <= 2500;
+        return isDouble(savingsAmount) && Double.parseDouble(savingsAmount) >= 0 && Double.parseDouble(savingsAmount) <= 2500;
     }
 
     private boolean containsNoSpecialCharacters(String commandId) {
         return commandId.matches("[0-9]+");
     }
 
-    private boolean isInteger(String commandId) {
+    private boolean isDouble(String commandId) {
         try {
-            Integer.parseInt(commandId);
-        } catch (Exception notInt) {
+            Double.parseDouble(commandId);
+        } catch (Exception notDouble) {
             return false;
         }
         return true;
+    }
+
+    private boolean isInteger(String commandId) {
+        try {
+            Integer.parseInt(commandId);
+        } catch (Exception notInteger) {
+            return false;
+        }
+        return true;
+    }
+
+    private boolean isDoublePositive(String inputAmount) {
+        return (Double.parseDouble(inputAmount) >= 0);
     }
 
     private boolean isIntPositive(String inputAmount) {

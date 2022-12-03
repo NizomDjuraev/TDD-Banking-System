@@ -53,5 +53,22 @@ public class DepositCommandProcessorTest {
         assertEquals(200, bank.getAccounts().get(12345678).getBalance());
     }
 
+    @Test
+    public void multiple_valid_deposits_into_checking_account() {
+        bank.createCheckingAccount(12345678, 1.0);
+        bank.depositIntoAccount(12345678, 100);
+        commandProcessor.process("deposit 12345678 100");
+        commandProcessor.process("deposit 12345678 300");
+        assertTrue(bank.doesIdExist(12345678));
+        assertEquals(500, bank.getAccounts().get(12345678).getBalance());
+    }
 
+    @Test
+    public void multiple_valid_deposits_into_savings_account() {
+        bank.createSavingsAccount(12345678, 1.0);
+        commandProcessor.process("deposit 12345678 300");
+        commandProcessor.process("deposit 12345678 300");
+        assertTrue(bank.doesIdExist(12345678));
+        assertEquals(600, bank.getAccounts().get(12345678).getBalance());
+    }
 }
