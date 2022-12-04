@@ -86,7 +86,7 @@ public class CreateCommandValidatorTest {
 
     @Test
     void create_id_already_exists() {
-        bank.createCheckingAccount(12345678, 0.1);
+        bank.createCheckingAccount("12345678", 0.1);
         actual = commandValidator.validate("create checking 12345678 0.1");
         assertFalse(actual);
     }

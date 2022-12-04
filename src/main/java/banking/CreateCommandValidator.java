@@ -81,7 +81,7 @@ public class CreateCommandValidator {
                 && isInteger(commandId)
                 && isIdPositive(commandId)
                 && (containsNoSpecialCharacters(commandId))
-                && !(bank.doesIdExist(Integer.parseInt(commandId)));
+                && !(bank.doesIdExist(commandId));
     }
 
     private boolean isIdPositive(String commandId) {

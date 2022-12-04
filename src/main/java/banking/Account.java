@@ -1,25 +1,35 @@
 package banking;
 
+import java.math.RoundingMode;
+import java.text.DecimalFormat;
+import java.util.ArrayList;
+import java.util.List;
+
 public class Account {
-    Bank bank;
-    private int id;
+
+    private String id;
     private double apr;
     double balance;
     String type;
     int monthsPassed = 0;
+    DecimalFormat decimalFormat;
+    List<String> allInputsEntered;
 
-    public Account(String type, int id, double apr) {
+    public Account(String type, String id, double apr) {
         this.type = type;
         this.id = id;
         this.apr = apr;
         this.balance = 0;
+        decimalFormat = new DecimalFormat("0.00");
+        decimalFormat.setRoundingMode(RoundingMode.FLOOR);
+        allInputsEntered = new ArrayList<>();
     }
 
     public String getType() {
         return type;
     }
 
-    public int getId() {
+    public String getId() {
         return id;
     }
 
@@ -102,4 +112,9 @@ public class Account {
     }
 
 
+    public List<String> getOldInputs() {
+        String accountParts = getType() + " " + getId() + " " + decimalFormat.format(getBalance()) + " " + decimalFormat.format(getApr());
+        allInputsEntered.set(0, accountParts);
+        return allInputsEntered;
+    }
 }

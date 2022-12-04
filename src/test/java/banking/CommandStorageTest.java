@@ -17,7 +17,8 @@ public class CommandStorageTest {
 
     @BeforeEach
     void setUp() {
-        commandStorage = new CommandStorage();
+        Bank bank = new Bank();
+        commandStorage = new CommandStorage(bank);
 
     }
 

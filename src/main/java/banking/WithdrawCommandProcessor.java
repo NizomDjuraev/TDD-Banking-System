@@ -1,15 +1,16 @@
 package banking;
 
-public class WithdrawCommandProcessor {
+public class WithdrawCommandProcessor extends CommandProcessor {
 
-    private Bank bank;
 
     public WithdrawCommandProcessor(Bank bank) {
-        this.bank = bank;
+        super(bank);
+
     }
 
     public void processWithdrawCommand(String commandString) {
         String[] commandParts = commandString.split(" ");
-        bank.withdrawFromAccount(Integer.parseInt(commandParts[1]), Double.parseDouble(commandParts[2]));
+        bank.withdrawFromAccount(commandParts[1], Double.parseDouble(commandParts[2]));
+        addToInputHistory(commandParts[1], commandString);
     }
 }

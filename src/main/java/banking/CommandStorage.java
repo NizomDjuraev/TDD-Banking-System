@@ -2,16 +2,20 @@ package banking;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 
 public class CommandStorage {
 
-    public List<String> invalidCommands;
-    public List<String> validCommands;
+    Bank bank;
+    public ArrayList<String> invalidCommands;
+    public ArrayList<String> outputList;
 
-    public CommandStorage() {
+    public CommandStorage(Bank bank) {
+        this.bank = bank;
         invalidCommands = new ArrayList<>();
-//        validCommands = new ArrayList<>();
+        outputList = new ArrayList<>();
     }
+
 
     public List<String> getInvalidCommands() {
         return invalidCommands;
@@ -22,7 +26,26 @@ public class CommandStorage {
         invalidCommands.add(stringInput);
     }
 
-//    public void addValidCommands(String stringInput) {
-//        validCommands.add(stringInput);
-//    }
+
+    public List<String> returnOutput() {
+        addValidCommands();
+        returnInvalidCommands();
+        return outputList;
+    }
+
+    private void addValidCommands() {
+        for (Map.Entry<String, Account> accountEntry : bank.getAccounts().entrySet()) {
+            String id = String.valueOf(accountEntry.getValue().getId());
+            List<String> validInputs = bank.getAccounts().get(id).getOldInputs();
+            outputList.addAll(validInputs);
+        }
+    }
+
+
+    private void returnInvalidCommands() {
+        outputList.addAll(invalidCommands);
+    }
 }
+
+
+

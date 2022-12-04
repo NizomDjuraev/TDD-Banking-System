@@ -1,10 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="banking.MasterControlTest" tests="4" skipped="0" failures="0" errors="0" timestamp="2022-12-04T01:07:36" hostname="DESKTOP-94V4V9I" time="0.002">
+<testsuite name="banking.MasterControlTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2022-12-04T03:36:31" hostname="DESKTOP-94V4V9I" time="0.05">
   <properties/>
-  <testcase name="create_command_is_invalid_misspelled()" classname="banking.MasterControlTest" time="0.001"/>
-  <testcase name="deposit_command_is_invalid_misspelled()" classname="banking.MasterControlTest" time="0.0"/>
-  <testcase name="two_invalid_commands_misspelled()" classname="banking.MasterControlTest" time="0.0"/>
-  <testcase name="invalid_command_account_id_already_exists()" classname="banking.MasterControlTest" time="0.0"/>
+  <testcase name="create_command_is_valid()" classname="banking.MasterControlTest" time="0.05"/>
   <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>

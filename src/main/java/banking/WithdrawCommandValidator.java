@@ -81,19 +81,19 @@ public class WithdrawCommandValidator {
     }
 
     private boolean doesBankExistAlready(String commandId) {
-        return bank.doesIdExist(Integer.parseInt(commandId));
+        return bank.doesIdExist(commandId);
     }
 
     private boolean isTypeChecking(String commandString) {
-        return bank.getType(Integer.parseInt(commandString)).equalsIgnoreCase("checking");
+        return bank.getType(commandString).equalsIgnoreCase("checking");
     }
 
     private boolean isTypeSavings(String commandString) {
-        return bank.getType(Integer.parseInt(commandString)).equalsIgnoreCase("savings");
+        return bank.getType(commandString).equalsIgnoreCase("savings");
     }
 
     private boolean isTypeCd(String commandString) {
-        return bank.getType(Integer.parseInt(commandString)).equalsIgnoreCase("cd");
+        return bank.getType(commandString).equalsIgnoreCase("cd");
     }
 
     private boolean validCheckingAmount(String checkingAmount) {
@@ -105,7 +105,7 @@ public class WithdrawCommandValidator {
     }
 
     private boolean validCdAmount(String cdId, String cdAmount) {
-        return isDouble(cdAmount) && Double.parseDouble(cdAmount) == bank.getAccounts().get(Integer.parseInt(cdId)).getBalance();
+        return isDouble(cdAmount) && Double.parseDouble(cdAmount) == bank.getAccounts().get(cdId).getBalance();
     }
 
 }

@@ -18,11 +18,10 @@ public class MasterControl {
         for (String command : input) {
             if (commandValidator.validate(command)) {
                 commandProcessor.process(command);
-                //commandStorage.addValidCommands(command);
             } else {
                 commandStorage.addInvalidCommands(command);
             }
         }
-        return commandStorage.getInvalidCommands();
+        return commandStorage.returnOutput();
     }
 }

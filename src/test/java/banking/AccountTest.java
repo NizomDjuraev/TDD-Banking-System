@@ -10,7 +10,7 @@ public class AccountTest {
     public static final String checkingTYPE = "checking";
     public static final String savingsTYPE = "savings";
     public static final String cdTYPE = "cd";
-    public static final int ID = 12345678;
+    public static final String ID = "12345678";
     public static final double APR = 0.1;
     public static final double BALANCE = 0.0;
 

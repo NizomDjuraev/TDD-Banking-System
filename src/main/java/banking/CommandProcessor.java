@@ -1,7 +1,7 @@
 package banking;
 
 public class CommandProcessor {
-    private Bank bank;
+    protected Bank bank;
 
     public CommandProcessor(Bank bank) {
         this.bank = bank;
@@ -31,6 +31,10 @@ public class CommandProcessor {
         if (inputCommand[0].equalsIgnoreCase("pass")) {
             passCommandProcessor.passCommandProcessor(command);
         }
+    }
+
+    public void addToInputHistory(String id, String command) {
+        bank.addToInputs(id, command);
     }
 
 }

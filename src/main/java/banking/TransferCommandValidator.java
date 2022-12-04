@@ -40,7 +40,7 @@ public class TransferCommandValidator {
     }
 
     private boolean doesBankExistAlready(String commandId) {
-        return bank.doesIdExist(Integer.parseInt(commandId));
+        return bank.doesIdExist(commandId);
     }
 
     private boolean bothAccountsExistAlready(String fromId, String toId) {

@@ -1,16 +1,17 @@
 package banking;
 
-public class TransferCommandProcessor {
+public class TransferCommandProcessor extends CommandProcessor {
 
-    private Bank bank;
 
     public TransferCommandProcessor(Bank bank) {
-        this.bank = bank;
+        super(bank);
     }
 
     public void transferCommandProcessor(String commandString) {
         String[] commandParts = commandString.split(" ");
-        bank.withdrawFromAccount(Integer.parseInt(commandParts[1]), Double.parseDouble(commandParts[3]));
-        bank.depositIntoAccount(Integer.parseInt(commandParts[2]), Double.parseDouble(commandParts[3]));
+        bank.withdrawFromAccount(commandParts[1], Double.parseDouble(commandParts[3]));
+        bank.depositIntoAccount(commandParts[2], Double.parseDouble(commandParts[3]));
+        addToInputHistory(commandParts[1], commandString);
+        addToInputHistory(commandParts[2], commandString);
     }
 }
