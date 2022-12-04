@@ -95,6 +95,7 @@ public class TransferCommandValidatorTest {
     void valid_min_amount_above_boundary_from_savings_account_to_checking_account() {
         bank.createSavingsAccount("87654321", 1.0);
         bank.createCheckingAccount("12345678", 1.0);
+        bank.depositIntoAccount("87654321", 1);
         actual = commandValidator.validate("transfer 87654321 12345678 1");
         assertTrue(actual);
     }
@@ -103,6 +104,7 @@ public class TransferCommandValidatorTest {
     void valid_transfer_of_decimal_amount_from_checking_account_to_savings_account() {
         bank.createCheckingAccount("12345678", 1.0);
         bank.createSavingsAccount("87654321", 1.0);
+        bank.depositIntoAccount("12345678", 1000);
         actual = commandValidator.validate("transfer 12345678 87654321 300.5");
         assertTrue(actual);
     }
@@ -111,6 +113,7 @@ public class TransferCommandValidatorTest {
     void valid_transfer_of_decimal_amount_from_savings_account_to_checking_account() {
         bank.createSavingsAccount("87654321", 1.0);
         bank.createCheckingAccount("12345678", 1.0);
+        bank.depositIntoAccount("87654321", 1000);
         actual = commandValidator.validate("transfer 87654321 12345678 500.5");
         assertTrue(actual);
     }
@@ -281,4 +284,37 @@ public class TransferCommandValidatorTest {
         actual = commandValidator.validate("transfer 12345678 87zx.21 300 ");
         assertFalse(actual);
     }
+
+    @Test
+    void invalid_transfer_both_id_invalid_length() {
+        bank.createCheckingAccount("12345678", 1.0);
+        bank.createCheckingAccount("87654321", 1.0);
+        actual = commandValidator.validate("transfer 1234 4321 300 ");
+        assertFalse(actual);
+    }
+
+    @Test
+    void invalid_transfer_both_id_is_negative() {
+        bank.createCheckingAccount("12345678", 1.0);
+        bank.createCheckingAccount("87654321", 1.0);
+        actual = commandValidator.validate("transfer -12345678 -43214321 300 ");
+        assertFalse(actual);
+    }
+
+    @Test
+    void invalid_transfer_both_id_is_not_positive() {
+        bank.createCheckingAccount("@1235678", 1.0);
+        bank.createCheckingAccount("@3214321", 1.0);
+        actual = commandValidator.validate("transfer @1235678 @3214321 300 ");
+        assertFalse(actual);
+    }
+
+    @Test
+    void invalid_bank_from_not_in_system() {
+        bank.createCheckingAccount("12345677", 1.0);
+        bank.createCheckingAccount("12345679", 1.0);
+        actual = commandValidator.validate("transfer 22345678 12345679 300 ");
+        assertFalse(actual);
+    }
+
 }

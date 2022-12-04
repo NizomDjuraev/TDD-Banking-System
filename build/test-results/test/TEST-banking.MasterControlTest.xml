@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="banking.MasterControlTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2022-12-04T03:36:31" hostname="DESKTOP-94V4V9I" time="0.05">
+<testsuite name="banking.MasterControlTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2022-12-04T04:28:21" hostname="DESKTOP-94V4V9I" time="0.045">
   <properties/>
-  <testcase name="create_command_is_valid()" classname="banking.MasterControlTest" time="0.05"/>
+  <testcase name="duplicate_input_still_displays_properly()" classname="banking.MasterControlTest" time="0.045"/>
   <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>
