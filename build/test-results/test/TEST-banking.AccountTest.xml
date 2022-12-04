@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="banking.AccountTest" tests="9" skipped="0" failures="0" errors="0" timestamp="2022-12-03T09:27:23" hostname="DESKTOP-94V4V9I" time="0.029">
+<testsuite name="banking.AccountTest" tests="9" skipped="0" failures="0" errors="0" timestamp="2022-12-04T01:06:55" hostname="DESKTOP-94V4V9I" time="0.035">
   <properties/>
-  <testcase name="does_the_savings_account_have_an_id()" classname="banking.AccountTest" time="0.021"/>
-  <testcase name="does_the_checking_account_have_a_starting_balance()" classname="banking.AccountTest" time="0.004"/>
-  <testcase name="does_the_savings_account_have_an_apr()" classname="banking.AccountTest" time="0.0"/>
+  <testcase name="does_the_savings_account_have_an_id()" classname="banking.AccountTest" time="0.022"/>
+  <testcase name="does_the_checking_account_have_a_starting_balance()" classname="banking.AccountTest" time="0.006"/>
+  <testcase name="does_the_savings_account_have_an_apr()" classname="banking.AccountTest" time="0.001"/>
   <testcase name="does_the_cd_account_have_an_id()" classname="banking.AccountTest" time="0.001"/>
-  <testcase name="does_the_cd_account_have_a_starting_balance()" classname="banking.AccountTest" time="0.0"/>
+  <testcase name="does_the_cd_account_have_a_starting_balance()" classname="banking.AccountTest" time="0.001"/>
   <testcase name="does_the_checking_account_have_an_apr()" classname="banking.AccountTest" time="0.001"/>
-  <testcase name="does_the_cd_account_have_an_apr()" classname="banking.AccountTest" time="0.0"/>
+  <testcase name="does_the_cd_account_have_an_apr()" classname="banking.AccountTest" time="0.001"/>
   <testcase name="does_the_checking_account_have_an_id()" classname="banking.AccountTest" time="0.0"/>
   <testcase name="does_the_savings_account_have_a_starting_balance()" classname="banking.AccountTest" time="0.0"/>
   <system-out><![CDATA[]]></system-out>

@@ -164,5 +164,92 @@ public class BankTest {
         bank.withdrawFromAccount(ID, 0);
         assertEquals(500, bank.getAccounts().get(ID).getBalance());
     }
-    
+
+//    @Test
+//    void valid_months_passed_closes_account_from_penalties() {
+//        bank.createCheckingAccount(ID, APR);
+//        bank.createCheckingAccount(ID, APR);
+//        bank.depositIntoAccount(ID, 500);
+//        bank.withdrawFromAccount(ID, 0);
+//        assertEquals(500, bank.getAccounts().get(ID).getBalance());
+//    }
+
+    @Test
+    void valid_three_months_passed_into_checking_account_with_upper_boundary_of_minimum_balance() {
+        bank.createCheckingAccount(12345678, 1.0);
+        bank.depositIntoAccount(12345678, 100);
+        bank.passMonths(3);
+        assertEquals(100.2502083912037, bank.getAccounts().get(12345678).getBalance());
+    }
+
+    @Test
+    void valid_three_months_passed_into_savings_account_with_upper_boundary_of_minimum_balance() {
+        bank.createSavingsAccount(12345678, 1.0);
+        bank.depositIntoAccount(12345678, 100);
+        bank.passMonths(3);
+        assertEquals(100.2502083912037, bank.getAccounts().get(12345678).getBalance());
+    }
+
+    @Test
+    void valid_three_months_passed_into_cd_account_with_upper_boundary_of_minimum_balance() {
+        bank.createCdAccount(12345678, 1.0, 1000);
+        bank.passMonths(3);
+        assertEquals(1010.045960887182, bank.getAccounts().get(12345678).getBalance());
+    }
+
+    @Test
+    void valid_one_month_passed_into_checking_account() {
+        bank.createCheckingAccount(12345678, 1.0);
+        bank.depositIntoAccount(12345678, 1000);
+        bank.passMonths(1);
+        assertEquals(1000.8333333333334, bank.getAccounts().get(12345678).getBalance());
+    }
+
+    @Test
+    void valid_one_month_passed_into_savings_account() {
+        bank.createSavingsAccount(12345678, 1.0);
+        bank.depositIntoAccount(12345678, 1000);
+        bank.passMonths(1);
+        assertEquals(1000.8333333333334, bank.getAccounts().get(12345678).getBalance());
+    }
+
+    @Test
+    void valid_one_month_passed_into_cd_account() {
+        bank.createCdAccount(12345678, 1.0, 1000);
+        bank.passMonths(1);
+        assertEquals(1003.3375023152971, bank.getAccounts().get(12345678).getBalance());
+    }
+
+    @Test
+    void valid_one_month_passed_into_checking_account_with_below_minimum_balance() {
+        bank.createCheckingAccount(12345678, 1.0);
+        bank.depositIntoAccount(12345678, 50);
+        bank.passMonths(1);
+        assertEquals(25.020833333333332, bank.getAccounts().get(12345678).getBalance());
+    }
+
+    @Test
+    void valid_one_month_passed_into_savings_account_with_below_minimum_balance() {
+        bank.createSavingsAccount(12345678, 1.0);
+        bank.depositIntoAccount(12345678, 50);
+        bank.passMonths(1);
+        assertEquals(25.020833333333332, bank.getAccounts().get(12345678).getBalance());
+    }
+
+    @Test
+    void valid_one_month_passed_into_cd_account_with_below_minimum_balance() {
+        bank.createCdAccount(12345678, 1.0, 1000);
+        bank.withdrawFromAccount(12345678, 950);
+        bank.passMonths(1);
+        assertEquals(0.0, bank.getAccounts().get(12345678).getBalance());
+    }
+
+    @Test
+    void account_gone_valid_one_month_passed_into_cd_account_with_below_minimum_balance() {
+        bank.createCheckingAccount(12345678, 1.0);
+        bank.depositIntoAccount(12345678, 0);
+        bank.passMonths(3);
+        assertEquals(0, bank.getAccounts().size());
+    }
+
 }

@@ -20,7 +20,7 @@ public class DepositCommandProcessorTest {
 
 
     @Test
-    public void valid_deposit_checking_account_with_zero_balance_processed() {
+    void valid_deposit_checking_account_with_zero_balance_processed() {
         bank.createCheckingAccount(12345678, 1.0);
         commandProcessor.process("deposit 12345678 100");
         assertTrue(bank.doesIdExist(12345678));
@@ -28,7 +28,7 @@ public class DepositCommandProcessorTest {
     }
 
     @Test
-    public void valid_deposit_savings_account_with_zero_balance_processed() {
+    void valid_deposit_savings_account_with_zero_balance_processed() {
         bank.createSavingsAccount(12345678, 1.0);
         commandProcessor.process("deposit 12345678 100");
         assertTrue(bank.doesIdExist(12345678));
@@ -36,7 +36,7 @@ public class DepositCommandProcessorTest {
     }
 
     @Test
-    public void valid_deposit_checking_account_with_existing_balance_processed() {
+    void valid_deposit_checking_account_with_existing_balance_processed() {
         bank.createCheckingAccount(12345678, 1.0);
         bank.depositIntoAccount(12345678, 100);
         commandProcessor.process("deposit 12345678 100");
@@ -45,7 +45,7 @@ public class DepositCommandProcessorTest {
     }
 
     @Test
-    public void valid_deposit_savings_account_with_existing_balance_processed() {
+    void valid_deposit_savings_account_with_existing_balance_processed() {
         bank.createSavingsAccount(12345678, 1.0);
         bank.depositIntoAccount(12345678, 100);
         commandProcessor.process("deposit 12345678 100");
@@ -54,7 +54,7 @@ public class DepositCommandProcessorTest {
     }
 
     @Test
-    public void multiple_valid_deposits_into_checking_account() {
+    void multiple_valid_deposits_into_checking_account() {
         bank.createCheckingAccount(12345678, 1.0);
         bank.depositIntoAccount(12345678, 100);
         commandProcessor.process("deposit 12345678 100");
@@ -64,7 +64,7 @@ public class DepositCommandProcessorTest {
     }
 
     @Test
-    public void multiple_valid_deposits_into_savings_account() {
+    void multiple_valid_deposits_into_savings_account() {
         bank.createSavingsAccount(12345678, 1.0);
         commandProcessor.process("deposit 12345678 300");
         commandProcessor.process("deposit 12345678 300");

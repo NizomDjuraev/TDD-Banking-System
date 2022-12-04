@@ -67,5 +67,14 @@ public class MasterControlTest {
         assertSingleCommand("create checking 12345678 1.0", actual);
     }
 
+//    @Test
+//    void create_command_is_valid() {
+//        input.add("create checking 12345678 1.5");
+//
+//
+//        List<String> actual = masterControl.start(input);
+//        assertSingleCommand("create checking 12345678 1.5", actual);
+//    }
+
 
 }

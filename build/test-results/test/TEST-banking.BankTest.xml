@@ -1,18 +1,28 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="banking.BankTest" tests="20" skipped="0" failures="0" errors="0" timestamp="2022-12-03T09:27:23" hostname="DESKTOP-94V4V9I" time="0.02">
+<testsuite name="banking.BankTest" tests="30" skipped="0" failures="0" errors="0" timestamp="2022-12-04T01:06:56" hostname="DESKTOP-94V4V9I" time="0.026">
   <properties/>
-  <testcase name="withdraw_zero_amount_from_savings_account_with_zero_balance()" classname="banking.BankTest" time="0.001"/>
+  <testcase name="withdraw_zero_amount_from_savings_account_with_zero_balance()" classname="banking.BankTest" time="0.002"/>
   <testcase name="deposit_into_checking_account()" classname="banking.BankTest" time="0.0"/>
-  <testcase name="create_cd_account()" classname="banking.BankTest" time="0.001"/>
+  <testcase name="valid_three_months_passed_into_checking_account_with_upper_boundary_of_minimum_balance()" classname="banking.BankTest" time="0.001"/>
+  <testcase name="create_cd_account()" classname="banking.BankTest" time="0.002"/>
   <testcase name="withdraw_zero_amount_from_checking_account_with_nonzero_balance()" classname="banking.BankTest" time="0.001"/>
-  <testcase name="create_several_cd_accounts()" classname="banking.BankTest" time="0.001"/>
-  <testcase name="create_savings_account()" classname="banking.BankTest" time="0.002"/>
+  <testcase name="create_several_cd_accounts()" classname="banking.BankTest" time="0.0"/>
+  <testcase name="valid_one_month_passed_into_savings_account_with_below_minimum_balance()" classname="banking.BankTest" time="0.001"/>
+  <testcase name="create_savings_account()" classname="banking.BankTest" time="0.0"/>
   <testcase name="several_deposits_into_savings_account()" classname="banking.BankTest" time="0.0"/>
   <testcase name="create_several_checking_accounts()" classname="banking.BankTest" time="0.0"/>
-  <testcase name="create_several_savings_accounts()" classname="banking.BankTest" time="0.001"/>
+  <testcase name="account_gone_valid_one_month_passed_into_cd_account_with_below_minimum_balance()" classname="banking.BankTest" time="0.001"/>
+  <testcase name="valid_one_month_passed_into_cd_account()" classname="banking.BankTest" time="0.0"/>
+  <testcase name="valid_three_months_passed_into_cd_account_with_upper_boundary_of_minimum_balance()" classname="banking.BankTest" time="0.0"/>
+  <testcase name="create_several_savings_accounts()" classname="banking.BankTest" time="0.0"/>
+  <testcase name="valid_one_month_passed_into_checking_account_with_below_minimum_balance()" classname="banking.BankTest" time="0.0"/>
+  <testcase name="valid_one_month_passed_into_checking_account()" classname="banking.BankTest" time="0.0"/>
+  <testcase name="valid_one_month_passed_into_savings_account()" classname="banking.BankTest" time="0.0"/>
   <testcase name="bank_has_no_accounts_initially()" classname="banking.BankTest" time="0.002"/>
+  <testcase name="valid_three_months_passed_into_savings_account_with_upper_boundary_of_minimum_balance()" classname="banking.BankTest" time="0.001"/>
   <testcase name="withdraw_from_savings_account()" classname="banking.BankTest" time="0.0"/>
   <testcase name="several_withdrawals_from_savings_account()" classname="banking.BankTest" time="0.0"/>
+  <testcase name="valid_one_month_passed_into_cd_account_with_below_minimum_balance()" classname="banking.BankTest" time="0.0"/>
   <testcase name="create_checking_account()" classname="banking.BankTest" time="0.0"/>
   <testcase name="several_deposits_into_checking_account()" classname="banking.BankTest" time="0.0"/>
   <testcase name="withdraw_from_checking_account()" classname="banking.BankTest" time="0.0"/>
@@ -20,7 +30,7 @@
   <testcase name="withdraw_zero_amount_from_checking_account_with_zero_balance()" classname="banking.BankTest" time="0.0"/>
   <testcase name="several_withdrawals_from_checking_account()" classname="banking.BankTest" time="0.0"/>
   <testcase name="withdraw_zero_amount_from_savings_account_with_nonzero_balance()" classname="banking.BankTest" time="0.0"/>
-  <testcase name="withdraw_from_checking_balance_cant_go__below_zero()" classname="banking.BankTest" time="0.001"/>
+  <testcase name="withdraw_from_checking_balance_cant_go__below_zero()" classname="banking.BankTest" time="0.0"/>
   <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>

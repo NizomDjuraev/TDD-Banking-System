@@ -1,6 +1,8 @@
 package banking;
 
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 public class Bank {
@@ -16,17 +18,16 @@ public class Bank {
     }
 
     public void createCheckingAccount(int id, double apr) {
-        accounts.put(id, new CheckingAccount("checking", id, apr));
+        accounts.put(id, new CheckingAccount("Checking", id, apr));
     }
 
     public void createSavingsAccount(int id, double apr) {
-        accounts.put(id, new SavingsAccount("savings", id, apr));
+        accounts.put(id, new SavingsAccount("Savings", id, apr));
     }
 
     public void createCdAccount(int id, double apr, double amount) {
-        accounts.put(id, new CdAccount("cd", id, apr, amount));
+        accounts.put(id, new CdAccount("Cd", id, apr, amount));
     }
-
 
     public void depositIntoAccount(int id, double amount) {
         accounts.get(id).deposit(amount);
@@ -43,4 +44,18 @@ public class Bank {
     public boolean doesIdExist(int id) {
         return (accounts.containsKey(id));
     }
+
+    public void passMonths(int addMonths) {
+        List<Integer> zeroBalanceAccounts = new ArrayList<>();
+        for (Integer id : accounts.keySet()) {
+            Account account = accounts.get(id);
+            if (account.balance == 0) {
+                zeroBalanceAccounts.add(id);
+            }
+            account.passMonthsIntoAccount(addMonths);
+        }
+        accounts.keySet().removeAll(zeroBalanceAccounts);
+    }
+
+
 }

@@ -19,7 +19,7 @@ public class WithdrawCommandProcessorTest {
     }
 
     @Test
-    public void valid_withdraw_command_from_checking_account_with_zero_balance_processed() {
+    void valid_withdraw_command_from_checking_account_with_zero_balance_processed() {
         bank.createCheckingAccount(12345678, 1.0);
         commandProcessor.process("withdraw 12345678 300");
         assertTrue(bank.doesIdExist(12345678));
@@ -27,7 +27,7 @@ public class WithdrawCommandProcessorTest {
     }
 
     @Test
-    public void valid_withdraw_command_from_savings_account_with_zero_balance_processed() {
+    void valid_withdraw_command_from_savings_account_with_zero_balance_processed() {
         bank.createSavingsAccount(12345678, 1.0);
         commandProcessor.process("withdraw 12345678 300");
         assertTrue(bank.doesIdExist(12345678));
@@ -35,7 +35,7 @@ public class WithdrawCommandProcessorTest {
     }
 
     @Test
-    public void valid_withdraw_command_from_checking_account_with_existing_balance_processed() {
+    void valid_withdraw_command_from_checking_account_with_existing_balance_processed() {
         bank.createCheckingAccount(12345678, 1.0);
         bank.depositIntoAccount(12345678, 300);
         commandProcessor.process("withdraw 12345678 200");
@@ -44,7 +44,7 @@ public class WithdrawCommandProcessorTest {
     }
 
     @Test
-    public void valid_withdraw_command_from_savings_account_with_existing_balance_processed() {
+    void valid_withdraw_command_from_savings_account_with_existing_balance_processed() {
         bank.createSavingsAccount(12345678, 1.0);
         bank.depositIntoAccount(12345678, 300);
         commandProcessor.process("withdraw 12345678 100");
@@ -53,7 +53,7 @@ public class WithdrawCommandProcessorTest {
     }
 
     @Test
-    public void valid_withdraw_command_from_cd_account_with_existing_balance_processed() {
+    void valid_withdraw_command_from_cd_account_with_existing_balance_processed() {
         bank.createCdAccount(12345678, 1.0, 1000);
         bank.withdrawFromAccount(12345678, 1000);
         commandProcessor.process("withdraw 12345678 1000");

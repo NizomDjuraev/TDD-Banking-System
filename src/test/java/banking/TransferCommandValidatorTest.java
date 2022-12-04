@@ -123,7 +123,7 @@ public class TransferCommandValidatorTest {
         actualTwo = commandValidator.validate("transfer 12345678 87654321 200");
         assertTrue(actual && actualTwo);
     }
-    
+
     @Test
     void valid_multiple_transfer_amount_from_different_checking_account_to_same_savings_account() {
         bank.createCheckingAccount(12345678, 1.0);
@@ -147,14 +147,6 @@ public class TransferCommandValidatorTest {
         bank.createSavingsAccount(12345678, 1.0);
         bank.createSavingsAccount(87654321, 1.0);
         actual = commandValidator.validate("transfer 12345678 87654321 200");
-        assertTrue(actual);
-    }
-
-    @Test
-    void valid_transfer_from_cd_account_to_savings_account_following_cd_withdraw_rules() {
-        bank.createCdAccount(12345678, 1.0, 1500);
-        bank.createSavingsAccount(87654321, 1.0);
-        actual = commandValidator.validate("transfer 12345678 87654321 1500");
         assertTrue(actual);
     }
 
@@ -242,7 +234,7 @@ public class TransferCommandValidatorTest {
         assertFalse(actual && actualTwo);
     }
 
-//    ADD TEST LATER AFTER PASS TIME
+    //    ADD TEST LATER AFTER PASS TIME
 //    @Test
 //    void invalid_multiple_transfer_amount_from_different_checking_account_to_same_savings_account() {
 //        bank.createSavingsAccount(12345678, 1.0);
