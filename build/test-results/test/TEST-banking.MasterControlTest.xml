@@ -1,7 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="banking.MasterControlTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2022-12-04T04:28:21" hostname="DESKTOP-94V4V9I" time="0.045">
+<testsuite name="banking.MasterControlTest" tests="10" skipped="0" failures="0" errors="0" timestamp="2022-12-04T04:53:16" hostname="DESKTOP-94V4V9I" time="0.022">
   <properties/>
-  <testcase name="duplicate_input_still_displays_properly()" classname="banking.MasterControlTest" time="0.045"/>
+  <testcase name="invalid_command_cd_account_already_exists()" classname="banking.MasterControlTest" time="0.016"/>
+  <testcase name="duplicate_input_still_displays_properly()" classname="banking.MasterControlTest" time="0.002"/>
+  <testcase name="sample_make_sure_this_passes_unchanged_or_you_will_fail()" classname="banking.MasterControlTest" time="0.001"/>
+  <testcase name="invalid_command_input_contains__typo()" classname="banking.MasterControlTest" time="0.0"/>
+  <testcase name="create_command_is_invalid_misspelled()" classname="banking.MasterControlTest" time="0.001"/>
+  <testcase name="invalid_command_checking_account_already_exists()" classname="banking.MasterControlTest" time="0.0"/>
+  <testcase name="deposit_command_is_invalid_misspelled()" classname="banking.MasterControlTest" time="0.0"/>
+  <testcase name="two_invalid_commands_misspelled()" classname="banking.MasterControlTest" time="0.0"/>
+  <testcase name="create_command_is_valid()" classname="banking.MasterControlTest" time="0.0"/>
+  <testcase name="invalid_command_savings_account_already_exists()" classname="banking.MasterControlTest" time="0.001"/>
   <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>

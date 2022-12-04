@@ -287,4 +287,5 @@ public class WithdrawCommandValidatorTest {
         actual = commandValidator.validate("withdraw 12345678 -50@.");
         assertFalse(actual);
     }
+
 }

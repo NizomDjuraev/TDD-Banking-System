@@ -72,5 +72,24 @@ public class AccountTest {
         assertEquals(BALANCE, cd.getBalance());
     }
 
+    @Test
+    void does_account_balance_update_after_one_month() {
+        checking.accountBalanceUpdateAfterOneMonth(100);
+        assertEquals(0.008333333333333333, checking.getBalance());
+    }
+
+    @Test
+    void does_account_balance_update_after_penalty() {
+        checking.deposit(25);
+        checking.accountBalanceAfterPenaltyFee();
+        assertEquals(0, checking.getBalance());
+    }
+
+    @Test
+    void does_account_withdraw_zero_properly() {
+        checking.deposit(25);
+        checking.withdraw(25);
+        assertEquals(0, checking.getBalance());
+    }
 
 }

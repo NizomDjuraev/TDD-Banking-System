@@ -11,11 +11,13 @@ public class CreateCommandValidatorTest {
     private CommandValidator commandValidator;
     private Bank bank;
     private boolean actual;
+    private CreateCommandValidator createCommandValidator;
 
     @BeforeEach
     void setUp() {
         bank = new Bank();
         commandValidator = new CommandValidator(bank);
+        createCommandValidator = new CreateCommandValidator(bank);
     }
 
     @Test
@@ -295,6 +297,18 @@ public class CreateCommandValidatorTest {
     void apr_above_max_boundary() {
         actual = commandValidator.validate("create checking 12345678 10.1");
         assertFalse(actual);
+    }
+
+    @Test
+    void create_command_is_id_positive() {
+        actual = createCommandValidator.isIdPositive("12345678");
+        assertTrue(actual);
+    }
+
+    @Test
+    void create_command_is_apr_positive() {
+        actual = createCommandValidator.isAprPositive("1.0");
+        assertTrue(actual);
     }
 
 

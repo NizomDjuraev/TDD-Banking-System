@@ -57,7 +57,7 @@ public class Account {
         }
     }
 
-    private double accountBalanceUpdateAfterOneMonth(double runningBalance) {
+    public double accountBalanceUpdateAfterOneMonth(double runningBalance) {
         return this.balance += (((this.apr / 100) / 12) * runningBalance);
     }
 
@@ -71,8 +71,6 @@ public class Account {
 
     public void passMonthsIntoAccount(int monthsPassedIntoAccount) {
         monthsPassed += monthsPassedIntoAccount;
-        if (this.balance == 0) {
-        }
         if (this.balance < 100) {
             updatedAccountBelowMinimumBalanceCalculation();
         }
