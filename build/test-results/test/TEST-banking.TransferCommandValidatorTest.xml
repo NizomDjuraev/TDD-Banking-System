@@ -1,36 +1,36 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="banking.TransferCommandValidatorTest" tests="32" skipped="0" failures="0" errors="0" timestamp="2022-12-04T01:06:56" hostname="DESKTOP-94V4V9I" time="0.024">
+<testsuite name="banking.TransferCommandValidatorTest" tests="32" skipped="0" failures="0" errors="0" timestamp="2022-12-04T01:07:36" hostname="DESKTOP-94V4V9I" time="0.017">
   <properties/>
-  <testcase name="valid_transfer_from_checking_account_to_savings_account()" classname="banking.TransferCommandValidatorTest" time="0.001"/>
-  <testcase name="valid_multiple_transfer_amount_from_checking_account_to_savings_account()" classname="banking.TransferCommandValidatorTest" time="0.001"/>
+  <testcase name="valid_transfer_from_checking_account_to_savings_account()" classname="banking.TransferCommandValidatorTest" time="0.0"/>
+  <testcase name="valid_multiple_transfer_amount_from_checking_account_to_savings_account()" classname="banking.TransferCommandValidatorTest" time="0.0"/>
   <testcase name="invalid_transfer_command_ToId_contains_non_integer_values()" classname="banking.TransferCommandValidatorTest" time="0.0"/>
   <testcase name="invalid_transfer_command_contains_too_many_inputs()" classname="banking.TransferCommandValidatorTest" time="0.001"/>
   <testcase name="invalid_transfer_command_fromId_too_short()" classname="banking.TransferCommandValidatorTest" time="0.0"/>
   <testcase name="valid_max_amount_above_boundary_from_savings_account_to_checking_account()" classname="banking.TransferCommandValidatorTest" time="0.001"/>
   <testcase name="invalid_multiple_over_max_limit_transfer_amount_from_savings_account_to_checking_account()" classname="banking.TransferCommandValidatorTest" time="0.0"/>
-  <testcase name="valid_transfer_from_savings_account_to_savings_account()" classname="banking.TransferCommandValidatorTest" time="0.0"/>
+  <testcase name="valid_transfer_from_savings_account_to_savings_account()" classname="banking.TransferCommandValidatorTest" time="0.001"/>
   <testcase name="invalid_min_amount_below_boundary_from_savings_account_to_checking_account()" classname="banking.TransferCommandValidatorTest" time="0.0"/>
-  <testcase name="valid_transfer_of_decimal_amount_from_savings_account_to_checking_account()" classname="banking.TransferCommandValidatorTest" time="0.0"/>
-  <testcase name="invalid_multiple_over_max_limit_transfer_amount_from_checking_account_to_savings_account()" classname="banking.TransferCommandValidatorTest" time="0.001"/>
+  <testcase name="valid_transfer_of_decimal_amount_from_savings_account_to_checking_account()" classname="banking.TransferCommandValidatorTest" time="0.001"/>
+  <testcase name="invalid_multiple_over_max_limit_transfer_amount_from_checking_account_to_savings_account()" classname="banking.TransferCommandValidatorTest" time="0.0"/>
   <testcase name="invalid_transfer_command_fromId_contains_non_integer_values()" classname="banking.TransferCommandValidatorTest" time="0.001"/>
-  <testcase name="valid_transfer_of_max_amount_from_savings_account_to_checking_account()" classname="banking.TransferCommandValidatorTest" time="0.001"/>
-  <testcase name="valid_max_amount_below_boundary_from_savings_account_to_checking_account()" classname="banking.TransferCommandValidatorTest" time="0.001"/>
+  <testcase name="valid_transfer_of_max_amount_from_savings_account_to_checking_account()" classname="banking.TransferCommandValidatorTest" time="0.0"/>
+  <testcase name="valid_max_amount_below_boundary_from_savings_account_to_checking_account()" classname="banking.TransferCommandValidatorTest" time="0.0"/>
   <testcase name="invalid_min_amount_below_boundary_from_checking_account_to_savings_account()" classname="banking.TransferCommandValidatorTest" time="0.001"/>
-  <testcase name="valid_transfer_of_decimal_amount_from_checking_account_to_savings_account()" classname="banking.TransferCommandValidatorTest" time="0.0"/>
+  <testcase name="valid_transfer_of_decimal_amount_from_checking_account_to_savings_account()" classname="banking.TransferCommandValidatorTest" time="0.001"/>
   <testcase name="invalid_transfer_amount_input_contains_noninteger_values_from_savings_account_to_checking_account()" classname="banking.TransferCommandValidatorTest" time="0.0"/>
   <testcase name="valid_transfer_of_max_amount_from_checking_account_to_savings_account()" classname="banking.TransferCommandValidatorTest" time="0.001"/>
   <testcase name="invalid_transfer_command_contains_no_inputs()" classname="banking.TransferCommandValidatorTest" time="0.0"/>
   <testcase name="valid_transfer_of_zero_amount_from_savings_account_to_checking_account()" classname="banking.TransferCommandValidatorTest" time="0.0"/>
   <testcase name="valid_max_amount_below_boundary_from_checking_account_to_savings_account()" classname="banking.TransferCommandValidatorTest" time="0.0"/>
   <testcase name="valid_min_amount_above_boundary_from_savings_account_to_checking_account()" classname="banking.TransferCommandValidatorTest" time="0.0"/>
-  <testcase name="invalid_max_amount_above_boundary_from_checking_account_to_savings_account()" classname="banking.TransferCommandValidatorTest" time="0.001"/>
+  <testcase name="invalid_max_amount_above_boundary_from_checking_account_to_savings_account()" classname="banking.TransferCommandValidatorTest" time="0.0"/>
   <testcase name="invalid_transfer_from_savings_account_to_checking_account()" classname="banking.TransferCommandValidatorTest" time="0.0"/>
-  <testcase name="valid_transfer_from_checking_account_to_checking_account()" classname="banking.TransferCommandValidatorTest" time="0.0"/>
+  <testcase name="valid_transfer_from_checking_account_to_checking_account()" classname="banking.TransferCommandValidatorTest" time="0.001"/>
   <testcase name="invalid_transfer_amount_input_contains_noninteger_values_from_checking_account_to_savings_account()" classname="banking.TransferCommandValidatorTest" time="0.0"/>
   <testcase name="valid_transfer_from_savings_account_to_checking_account()" classname="banking.TransferCommandValidatorTest" time="0.0"/>
   <testcase name="valid_transfer_of_zero_amount_from_checking_account_to_savings_account()" classname="banking.TransferCommandValidatorTest" time="0.0"/>
-  <testcase name="valid_min_amount_above_boundary_from_checking_account_to_savings_account()" classname="banking.TransferCommandValidatorTest" time="0.001"/>
-  <testcase name="valid_multiple_transfer_amount_from_different_checking_account_to_same_savings_account()" classname="banking.TransferCommandValidatorTest" time="0.0"/>
+  <testcase name="valid_min_amount_above_boundary_from_checking_account_to_savings_account()" classname="banking.TransferCommandValidatorTest" time="0.0"/>
+  <testcase name="valid_multiple_transfer_amount_from_different_checking_account_to_same_savings_account()" classname="banking.TransferCommandValidatorTest" time="0.001"/>
   <testcase name="invalid_transfer_from_checking_account_to_savings_account()" classname="banking.TransferCommandValidatorTest" time="0.0"/>
   <testcase name="invalid_transfer_command_ToId_too_short()" classname="banking.TransferCommandValidatorTest" time="0.0"/>
   <system-out><![CDATA[]]></system-out>
