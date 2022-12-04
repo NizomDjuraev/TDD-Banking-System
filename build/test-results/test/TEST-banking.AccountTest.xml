@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="banking.AccountTest" tests="12" skipped="0" failures="0" errors="0" timestamp="2022-12-04T04:53:16" hostname="DESKTOP-94V4V9I" time="0.024">
+  <properties/>
+  <testcase name="does_account_withdraw_zero_properly()" classname="banking.AccountTest" time="0.015"/>
+  <testcase name="does_the_savings_account_have_an_id()" classname="banking.AccountTest" time="0.0"/>
+  <testcase name="does_the_checking_account_have_a_starting_balance()" classname="banking.AccountTest" time="0.0"/>
+  <testcase name="does_the_savings_account_have_an_apr()" classname="banking.AccountTest" time="0.0"/>
+  <testcase name="does_account_balance_update_after_penalty()" classname="banking.AccountTest" time="0.001"/>
+  <testcase name="does_the_cd_account_have_an_id()" classname="banking.AccountTest" time="0.0"/>
+  <testcase name="does_the_cd_account_have_a_starting_balance()" classname="banking.AccountTest" time="0.0"/>
+  <testcase name="does_account_balance_update_after_one_month()" classname="banking.AccountTest" time="0.0"/>
+  <testcase name="does_the_checking_account_have_an_apr()" classname="banking.AccountTest" time="0.001"/>
+  <testcase name="does_the_cd_account_have_an_apr()" classname="banking.AccountTest" time="0.001"/>
+  <testcase name="does_the_checking_account_have_an_id()" classname="banking.AccountTest" time="0.0"/>
+  <testcase name="does_the_savings_account_have_a_starting_balance()" classname="banking.AccountTest" time="0.001"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

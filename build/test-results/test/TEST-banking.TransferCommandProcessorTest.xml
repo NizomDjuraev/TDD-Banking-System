@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="banking.TransferCommandProcessorTest" tests="5" skipped="0" failures="0" errors="0" timestamp="2022-12-04T04:53:16" hostname="DESKTOP-94V4V9I" time="0.002">
+  <properties/>
+  <testcase name="valid_transfer_from_checking_account_to_savings_account()" classname="banking.TransferCommandProcessorTest" time="0.0"/>
+  <testcase name="valid_transfer_from_savings_account_to_savings_account()" classname="banking.TransferCommandProcessorTest" time="0.0"/>
+  <testcase name="multiple_valid_transfers_from_checking_account_to_savings_account()" classname="banking.TransferCommandProcessorTest" time="0.0"/>
+  <testcase name="valid_transfer_from_checking_account_to_checking_account()" classname="banking.TransferCommandProcessorTest" time="0.0"/>
+  <testcase name="valid_transfer_from_savings_account_to_checking_account()" classname="banking.TransferCommandProcessorTest" time="0.0"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
